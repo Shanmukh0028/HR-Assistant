@@ -1,0 +1,14 @@
+<mat-toolbar color="warn">
+  <span>HR Dashboard</span>
+  <span class="spacer"></span> <!-- Spacer to push the button to the right -->
+  <button mat-button (click)="logout()">Logout</button> <!-- Logout button -->
+</mat-toolbar>
+
+<div class="container dashboard-container">
+  <h2>Pending Queries</h2>
+  <div *ngFor="let query of queries" class="query-item">
+    <p><strong>Query:</strong> {{ query.question }}</p>
+    <textarea [(ngModel)]="query.answer" placeholder="Provide an answer"></textarea>
+    <button mat-raised-button color="primary" (click)="submitAnswer(query)">Submit Answer</button>
+  </div>
+</div>

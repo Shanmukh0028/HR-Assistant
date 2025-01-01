@@ -1,0 +1,8 @@
+// Mixin for reusable card style
+@mixin card-style {
+    background: white;
+    border-radius: 8px;
+    box-shadow: $card-shadow;
+    padding: 20px;
+  }
+  

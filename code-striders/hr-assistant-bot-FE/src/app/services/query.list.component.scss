@@ -1,0 +1,55 @@
+.query-controls {
+    button {
+      padding: 8px 16px;
+      margin-right: 8px;
+  
+      &.active {
+        background-color: #007bff;
+        color: white;
+      }
+    }
+  }
+  
+  .query-list {
+    margin: 20px; // Add margin around the table
+    padding: 10px; // Add padding inside the container
+    border: 1px solid #ddd; // Optional: border around the table container
+    border-radius: 8px; // Optional: rounded corners for the container
+    background-color: #f9f9f9; // Optional: light background color for the container
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Optional: subtle shadow for depth
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; // Merge borders
+    margin-top: 10px; // Space above the table
+  }
+  
+  th, td {
+    padding: 12px 15px; // Add padding for better spacing
+    text-align: left;
+    border: 1px solid #ddd; // Add borders to cells
+  }
+  
+  th {
+    background-color: #007bff; // Use a blue background for the header
+    color: white; // White text for header
+    font-weight: bold; // Bold text for header
+    text-decoration: none; // Ensure header text is not underlined
+  }
+  
+  td:nth-child(2) {
+    text-decoration: underline; // Underline text in the second column
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1; // Highlight row on hover
+  }
+  
+  .query-item {
+    cursor: pointer; // Change cursor to pointer on hover
+  }
+  
+  .query-item:nth-child(even) {
+    background-color: #f9f9f9; // Optional: alternate row background color for better readability
+  }

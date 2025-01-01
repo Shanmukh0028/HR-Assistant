@@ -1,0 +1,22 @@
+<div class="query-list">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Created At</th>
+          <th>Resolved At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let query of queries" (click)="onQueryClick(query)" class="query-item">
+          <td>{{ query.id }}</td>
+          <td>{{ query.title }}</td>
+          <td>{{ query.status }}</td>
+          <td>{{ query.createdAt }}</td>
+          <td>{{ query.resolvedAt || 'Not Resolved' }}</td> <!-- Display 'Not Resolved' if resolvedAt is null -->
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -3,8 +3,10 @@ package com.payu.hrassistant.query.model;
 
 import com.payu.hrassistant.usermanagement.model.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
@@ -12,6 +14,8 @@ import java.util.List;
 @Entity
 @Table(name = "queries")
 @Data
+@Builder
+@AllArgsConstructor
 public class Query {
 
     @Id

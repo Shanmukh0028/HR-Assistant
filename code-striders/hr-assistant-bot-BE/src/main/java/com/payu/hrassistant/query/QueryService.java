@@ -44,18 +44,18 @@ public class QueryService {
 
     public Object createQuery(QueryDto queryRequest){
         try {
-//            Query query = Query.builder()
-//                    .assignee(userRepository.findById(queryRequest.getAssigneeId()).orElse(null))
-//                    .createdBy(userRepository.findById(queryRequest.getCreatedById()).orElse(null))
-//                    .domain(queryRequest.getDomain())
-//                    .title(queryRequest.getTitle())
-//                    .question(queryRequest.getQuestion())
-//                    .status(QueryStatus.OPEN.name())
-//                    .createdAt(new Date())
-//                    .chats(new ArrayList<>())
-//                    .build();
+            Query query = Query.builder()
+                    .assignee(userRepository.findById(queryRequest.getAssigneeId()).orElse(null))
+                    .createdBy(userRepository.findById(queryRequest.getCreatedById()).orElse(null))
+                    .domain(queryRequest.getDomain())
+                    .title(queryRequest.getTitle())
+                    .question(queryRequest.getQuestion())
+                    .status(QueryStatus.OPEN.name())
+                    .createdAt(new Date())
+                    .chats(new ArrayList<>())
+                    .build();
 
-            Query query = createQueryFromRequest(queryRequest);
+//            Query query = createQueryFromRequest(queryRequest);
 
             queryRepository.save(query);
 

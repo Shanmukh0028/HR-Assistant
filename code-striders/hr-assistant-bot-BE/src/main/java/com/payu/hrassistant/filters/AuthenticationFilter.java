@@ -20,7 +20,9 @@ import java.util.Optional;
 @Order(4)
 @Component
 //@ConditionalOnProperty(name = "spring.filter.decryption", havingValue = "true")
-public class AuthenticationFilter extends OncePerRequestFilter {
+public class
+
+AuthenticationFilter extends OncePerRequestFilter {
 
 
     @Override

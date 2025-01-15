@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { QueryListComponent } from './services/query.list.component';
 
@@ -36,6 +37,7 @@ import { QueryListComponent } from './services/query.list.component';
     MatTabsModule,
     MatButtonModule,
     MatTableModule,
+    MatIconModule,
     MatPaginatorModule,
     MatCardModule,
     MatToolbarModule,

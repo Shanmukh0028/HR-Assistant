@@ -14,8 +14,14 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   errorMessage: string = '';
+  hide: boolean = true; // Default state for password visibility
+
 
   constructor(private authService: AuthService, private router: Router) {}
+
+  togglePasswordVisibility(): void {
+    this.hide = !this.hide;
+  }
 
   login() {
     this.authService.login(this.username, this.password).pipe(

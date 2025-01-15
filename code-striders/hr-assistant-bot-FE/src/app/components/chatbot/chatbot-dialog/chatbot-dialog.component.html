@@ -1,0 +1,22 @@
+<div class="chatbot-dialog-container">
+    <!-- Chatbot Button -->
+    <button class="chatbot-dialog-toggle" (click)="toggleChat()">
+      <mat-icon>{{ isChatOpen ? 'close' : 'chat' }}</mat-icon>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="chat-window" *ngIf="isChatOpen">
+        <div class="chat-header">
+            <h3>Chatbot</h3>
+            <button class="close-btn" (click)="toggleChat()">X</button>
+        </div>
+        <div class="chat-content">
+            <!-- Add chatbot content here -->
+            <p>Hi! How can I help you today?</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type a message..." [(ngModel)]="userMessage" />
+            <button (click)="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>

@@ -17,6 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { QueryListComponent } from './services/query.list.component';
+import { ChatbotDialogComponent } from './components/chatbot/chatbot-dialog/chatbot-dialog.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { QueryListComponent } from './services/query.list.component';
     LoginComponent,
     ChatbotComponent,
     HrDashboardComponent,
-    QueryListComponent
+    QueryListComponent,
+    ChatbotDialogComponent
   ],
   imports: [
     BrowserModule,

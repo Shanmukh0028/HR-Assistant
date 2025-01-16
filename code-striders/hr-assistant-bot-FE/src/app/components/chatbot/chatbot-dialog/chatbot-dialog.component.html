@@ -12,10 +12,13 @@
         </div>
         <div class="chat-content">
             <!-- Add chatbot content here -->
-            <p>Hi! How can I help you today?</p>
+            <div *ngFor="let message of chatMessages" [ngClass]="{'customer-message':message.sender=='customer','bot-message':message.sender=='bot'}" class="message">
+                {{message.text}}
+            </div>
+            <!-- <p>Hi! How can I help you today?</p> -->
         </div>
         <div class="chat-footer">
-            <input type="text" placeholder="Type a message..." [(ngModel)]="userMessage" />
+            <input type="text" placeholder="Type a message..." [(ngModel)]="userMessage" (keydown.enter)="sendMessage()" />
             <button (click)="sendMessage()">Send</button>
         </div>
     </div>

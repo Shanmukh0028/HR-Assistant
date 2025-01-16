@@ -20,6 +20,7 @@
     position: fixed;
     bottom: 80px;
     right: 20px;
+    height: 400px;
     width: 300px;
     max-height: 400px;
     background-color: white;
@@ -43,6 +44,27 @@
     flex: 1;
     padding: 10px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    max-width: 70%;
+}
+
+.customer-message {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #f8d7da;
+    align-self: flex-start;
+    text-align: left;
 }
 
 .chat-footer {

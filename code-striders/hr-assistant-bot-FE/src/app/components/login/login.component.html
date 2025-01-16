@@ -1,19 +1,22 @@
 <mat-toolbar color="primary">
     <span>HR Assistant Bot</span>
-  </mat-toolbar>
-  
-  <div class="container login-container">
+</mat-toolbar>
+
+<div class="container login-container">
     <h2>Login</h2>
     <form (ngSubmit)="login()">
-      <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput [(ngModel)]="username" name="username" required />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput [(ngModel)]="password" name="password" type="password" required />
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="submit">Login</button>
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="username" name="username" required />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'" name="password" required />
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Login</button>
     </form>
-  </div>
-  
+</div>

@@ -1,23 +1,27 @@
 <mat-toolbar color="primary">
-  <span>Chatbot</span>
-  <span class="spacer"></span> <!-- This spacer will push the button to the right -->
-  <button mat-button (click)="logout()">Logout</button> <!-- Logout button -->
+    <span>Chatbot</span>
+    <span class="spacer"></span>
+    <!-- This spacer will push the button to the right -->
+    <button mat-button (click)="logout()">Logout</button>
+    <!-- Logout button -->
 </mat-toolbar>
 
 <div class="container chatbot-container">
-  <mat-tab-group>
-    <mat-tab label="Open Queries">
-      <app-query-list [queryType]="'open'"></app-query-list>
-    </mat-tab>
-    <mat-tab label="Completed Queries">
-      <app-query-list [queryType]="'completed'"></app-query-list>
-    </mat-tab>
-  </mat-tab-group>
+    <mat-tab-group>
+        <mat-tab label="Open Queries">
+            <app-query-list [queryType]="'open'"></app-query-list>
+        </mat-tab>
+        <mat-tab label="Completed Queries">
+            <app-query-list [queryType]="'completed'"></app-query-list>
+        </mat-tab>
+    </mat-tab-group>
 
-  <textarea [(ngModel)]="query" placeholder="Ask your question"></textarea>
-  <button mat-raised-button color="primary" (click)="askQuery()">Ask</button>
+    <textarea [(ngModel)]="query" placeholder="Ask your question"></textarea>
+    <button mat-raised-button color="primary" (click)="askQuery()">Ask</button>
 
-  <div *ngIf="response" class="response">
-    <strong>Bot:</strong> {{ response }}
-  </div>
+    <div *ngIf="response" class="response">
+        <strong>Bot:</strong> {{ response }}
+    </div>
 </div>
+
+<app-chatbot-dialog></app-chatbot-dialog>

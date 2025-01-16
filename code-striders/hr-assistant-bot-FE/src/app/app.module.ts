@@ -14,8 +14,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { QueryListComponent } from './services/query.list.component';
+import { ChatbotDialogComponent } from './components/chatbot/chatbot-dialog/chatbot-dialog.component';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { QueryListComponent } from './services/query.list.component';
     LoginComponent,
     ChatbotComponent,
     HrDashboardComponent,
-    QueryListComponent
+    QueryListComponent,
+    ChatbotDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { QueryListComponent } from './services/query.list.component';
     MatTabsModule,
     MatButtonModule,
     MatTableModule,
+    MatIconModule,
     MatPaginatorModule,
     MatCardModule,
     MatToolbarModule,

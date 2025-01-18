@@ -1,5 +1,21 @@
 @import '../../../styles/mixins';
 @import '../../../styles/variables';
+.sidenav-container {
+    height: 100vh;
+}
+
+.sidenav {
+    width: 250px;
+}
+
+.mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
 .notification-container {
     position: relative;
     /* Position the dropdown relative to the button */

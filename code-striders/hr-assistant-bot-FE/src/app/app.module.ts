@@ -15,6 +15,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav'; 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { QueryListComponent } from './services/query.list.component';
 import { ChatbotDialogComponent } from './components/chatbot/chatbot-dialog/chatbot-dialog.component';
@@ -46,6 +47,7 @@ import { NotificationPaneComponent } from './components/notification/notificatio
     MatMenuModule,
     MatIconModule,
     MatListModule,
+    MatSidenavModule,
     MatPaginatorModule,
     MatCardModule,
     MatToolbarModule,

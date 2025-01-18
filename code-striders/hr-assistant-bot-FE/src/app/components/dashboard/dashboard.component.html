@@ -1,29 +1,25 @@
-<mat-toolbar color="primary">
-    <span>Chatbot</span>
-    <span class="spacer"></span>
-    <!-- This spacer will push the button to the right -->
-    <!-- <mat-icon matBadge="15">home</mat-icon> -->
-    <app-notification-bell></app-notification-bell>
-    <button mat-button (click)="logout()">Logout</button>
-    <!-- Logout button -->
-</mat-toolbar>
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="true" (backdropClick)="sidenav.close()">
+    <mat-sidenav #sidenav mode="side" class="sidenav" [opened]="false">
+        <mat-nav-list>
+            <mat-list-item (click)="navigateTo('home')">Home</mat-list-item>
+            <mat-list-item (click)="navigateTo('profile')">Profile</mat-list-item>
+            <mat-list-item (click)="navigateTo('settings')">Settings</mat-list-item>
+            <mat-list-item (click)="navigateTo('help')">Help</mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
 
-<!-- <div class="container chatbot-container">
-    <mat-tab-group>
-        <mat-tab label="Open Queries">
-            <app-query-list [queryType]="'open'"></app-query-list>
-        </mat-tab>
-        <mat-tab label="Completed Queries">
-            <app-query-list [queryType]="'completed'"></app-query-list>
-        </mat-tab>
-    </mat-tab-group>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+            <span>Chatbot</span>
+            <span class="spacer"></span>
+            <app-notification-bell></app-notification-bell>
+            <button mat-button (click)="logout()">Logout</button>
+        </mat-toolbar>
 
-    <textarea [(ngModel)]="query" placeholder="Ask your question"></textarea>
-    <button mat-raised-button color="primary" (click)="askQuery()">Ask</button>
-
-    <div *ngIf="response" class="response">
-        <strong>Bot:</strong> {{ response }}
-    </div>
-</div> -->
-
-<app-chatbot-dialog></app-chatbot-dialog>
+        <!-- Your existing content goes here -->
+        <app-chatbot-dialog></app-chatbot-dialog>
+    </mat-sidenav-content>
+</mat-sidenav-container>

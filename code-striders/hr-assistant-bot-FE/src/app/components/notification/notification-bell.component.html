@@ -1,0 +1,9 @@
+<div class="notification-container">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="notification-button">
+      <mat-icon>notifications</mat-icon>
+      <span class="badge" *ngIf="unreadCount$() > 0">{{ unreadCount$()}}</span>
+    </button>
+    <mat-menu #menu="matMenu">
+        <app-notification-pane></app-notification-pane>
+    </mat-menu>
+</div>

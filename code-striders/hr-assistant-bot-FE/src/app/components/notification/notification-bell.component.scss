@@ -1,0 +1,19 @@
+    .notification-container {
+        position: relative;
+    }
+    
+    .notification-button {
+        position: relative;
+    }
+    
+    .badge {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: red;
+        color: white;
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 50%;
+        font-weight: bold;
+    }

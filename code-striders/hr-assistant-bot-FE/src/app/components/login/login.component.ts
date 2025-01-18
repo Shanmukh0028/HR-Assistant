@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { LoginResponse } from '../../components/login/login-response.model'; // Adjust the path as necessary
+import { type LoginResponse } from './login-response.model'; // Adjust the path as necessary
 
 @Component({
   selector: 'app-login',
@@ -45,10 +45,10 @@ export class LoginComponent {
         // Proceed based on the role
         if (role === 'EMPLOYEE') {
           sessionStorage.setItem('employeeId', userId); // Store employeeId in session storage
-          this.router.navigate(['/chatbot']);
+          this.router.navigate(['/dashboard','employee']);
         } else if (role === 'HR') {
           sessionStorage.setItem('hrId', userId); // Store hrId in session storage
-          this.router.navigate(['/hr-dashboard']);
+          this.router.navigate(['/dashboard','hr']);
         } else {
           this.errorMessage = 'Unknown role. Access denied.';
         }

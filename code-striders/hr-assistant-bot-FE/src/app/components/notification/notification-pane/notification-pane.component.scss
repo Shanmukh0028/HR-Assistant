@@ -1,0 +1,70 @@
+.notification-pane {
+    // width: 400px;
+    /* Adjust the width for a better appearance */
+    max-height: 400px;
+    /* Add scrolling for large lists */
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    // border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    .notification-list {
+        margin: 0;
+        padding: 0;
+        mat-list {
+            padding: 0;
+            .notification-row {
+                padding: 0;
+                margin: 2px 0px;
+            }
+            .notification-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #ffffff;
+                border: 1px solid #e0e0e0;
+                border-radius: 5px;
+                padding: 10px;
+                // margin-bottom: 10px;
+                transition: background-color 0.3s ease;
+                &:hover {
+                    background-color: #f1f1f1;
+                }
+                .notification-content {
+                    display: flex;
+                    flex-direction: column;
+                    .message {
+                        font-size: 14px;
+                        color: #333;
+                        margin-bottom: 5px;
+                    }
+                    button {
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+    }
+    .empty-state {
+        text-align: center;
+        color: #363333;
+        font-style: italic;
+        padding: 20px;
+        /* Add padding for better appearance */
+    }
+}
+
+
+/* Adjust the width of the mat-menu */
+
+::ng-deep .mat-mdc-menu-panel {
+    max-width: 500px;
+    width: 400px !important;
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+
+::ng-deep .mat-mdc-menu-content {
+    padding: 0px !important
+}

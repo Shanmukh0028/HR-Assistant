@@ -1,0 +1,17 @@
+<div class="notification-pane">
+    <div *ngIf="notifications().length > 0" class="notification-list">
+        <mat-list>
+            <mat-list-item class="notification-row" *ngFor="let notification of notifications()">
+                <div class="notification-item">
+                    <p class="message">{{ notification.message }}</p>
+                    <button mat-button color="primary" (click)="markAsRead(notification.id)">
+                        Mark as Read
+                    </button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div *ngIf="notifications().length === 0" class="empty-state">
+        <p>No new notifications</p>
+    </div>
+</div>

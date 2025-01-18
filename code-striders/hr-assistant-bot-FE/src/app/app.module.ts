@@ -5,9 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { ChatbotComponent } from './components/chatbot/chatbot.component';
-import { HrDashboardComponent } from './components/hr-dashboard/hr-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
 import { MatInputModule} from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -18,17 +18,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { QueryListComponent } from './services/query.list.component';
 import { ChatbotDialogComponent } from './components/chatbot/chatbot-dialog/chatbot-dialog.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotificationBellComponent } from './components/notification/notification-bell.component';
+import { NotificationPaneComponent } from './components/notification/notification-pane/notification-pane.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ChatbotComponent,
-    HrDashboardComponent,
     QueryListComponent,
-    ChatbotDialogComponent
-  ],
+    ChatbotDialogComponent,
+    DashboardComponent,
+    NotificationBellComponent,
+    NotificationPaneComponent
+    ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -39,7 +43,9 @@ import { ChatbotDialogComponent } from './components/chatbot/chatbot-dialog/chat
     MatTabsModule,
     MatButtonModule,
     MatTableModule,
+    MatMenuModule,
     MatIconModule,
+    MatListModule,
     MatPaginatorModule,
     MatCardModule,
     MatToolbarModule,

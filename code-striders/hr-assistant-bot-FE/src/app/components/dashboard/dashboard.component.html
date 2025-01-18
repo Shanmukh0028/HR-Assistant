@@ -2,11 +2,13 @@
     <span>Chatbot</span>
     <span class="spacer"></span>
     <!-- This spacer will push the button to the right -->
+    <!-- <mat-icon matBadge="15">home</mat-icon> -->
+    <app-notification-bell></app-notification-bell>
     <button mat-button (click)="logout()">Logout</button>
     <!-- Logout button -->
 </mat-toolbar>
 
-<div class="container chatbot-container">
+<!-- <div class="container chatbot-container">
     <mat-tab-group>
         <mat-tab label="Open Queries">
             <app-query-list [queryType]="'open'"></app-query-list>
@@ -22,6 +24,6 @@
     <div *ngIf="response" class="response">
         <strong>Bot:</strong> {{ response }}
     </div>
-</div>
+</div> -->
 
 <app-chatbot-dialog></app-chatbot-dialog>

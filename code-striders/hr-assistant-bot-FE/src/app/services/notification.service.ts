@@ -1,10 +1,10 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 // import { environment } from '../../environments/environment';
 
 export interface Notification{
   id: BigInteger,
+  sentBy: string,
   userId: BigInteger,
   message: string,
   read: boolean
@@ -19,7 +19,7 @@ export class NotificationService {
 
   public unreadCount$ = computed(() => this.notifications$().filter((n) => !n.read).length);
 
-  private apiUrl = `http://localhost:8080/users/notifications`; // Adjust API endpoint
+  private apiUrl = `http://localhost:8081/users/notifications`; // Adjust API endpoint
 
   constructor(private http: HttpClient) {}
 
@@ -40,7 +40,7 @@ export class NotificationService {
 
   // Mark notification as read
   markAsRead(notificationId: BigInteger): void {
-    this.http.post(`${this.apiUrl}/${notificationId}/read`, {}).subscribe(() => {
+    this.http.post(`${this.apiUrl}/read/${notificationId}`, {}).subscribe(() => {
       const updatedNotifications = this.notifications$().map((notification) =>
         notification.id === notificationId ? { ...notification, read: true } : notification
       );

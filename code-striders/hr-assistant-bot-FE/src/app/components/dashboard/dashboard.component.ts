@@ -14,6 +14,8 @@ export class DashboardComponent {
 
   query: string = '';
   response: string | null = null;
+  userType: string = 'employee'
+  // navBarOpen: boolean = this.sidenav.opened;
 
   showNotifications: boolean;
   notifications = [
@@ -24,6 +26,11 @@ export class DashboardComponent {
 
   unreadCount = this.notifications.filter(n => !n.read).length;
 
+
+ngAfterViewInit(): void {
+  console.dir(this.sidenav); // Should log the MatSidenav object
+  console.log(this.sidenav.mode); // Should log "side"
+}
   constructor(private router: Router) {
     this.showNotifications = false;
   }
@@ -50,9 +57,14 @@ export class DashboardComponent {
     this.showNotifications = !this.showNotifications;
   }
 
-  navigateTo(route: string): void {
-    this.router.navigate([route]);
+  navigateTo(route: string, userType?: string): void {
+    if (userType) {
+      this.router.navigate([route, userType]);
+    } else {
+      this.router.navigate([route]);
+    }
   }
+
 
   logout() {
     // Implement your logout logic here

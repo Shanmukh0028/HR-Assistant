@@ -4,6 +4,9 @@
       <span class="badge" *ngIf="unreadCount$() > 0">{{ unreadCount$()}}</span>
     </button>
     <mat-menu #menu="matMenu">
+        <h2 mat-menu-item>
+            Check these Notifications
+        </h2>
         <app-notification-pane></app-notification-pane>
     </mat-menu>
 </div>

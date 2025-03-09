@@ -17,3 +17,13 @@
         border-radius: 50%;
         font-weight: bold;
     }
+    
+    .notification-menu {
+        border-radius: 8px !important;
+    }
+    
+     ::ng-deep .mat-mdc-menu-panel {
+        max-width: 500px !important;
+        width: 400px !important;
+        overflow-x: hidden;
+    }

@@ -1,12 +1,17 @@
-<div class="notification-pane">
-    <div *ngIf="notifications().length > 0" class="notification-list">
-        <mat-list>
+<div mat-menu-item class="notification-pane">
+    <div *ngIf="notifications().length > 0">
+        <mat-list class="notification-list">
             <mat-list-item class="notification-row" *ngFor="let notification of notifications()">
                 <div class="notification-item">
-                    <p class="message">{{ notification.message }}</p>
-                    <button mat-button color="primary" (click)="markAsRead(notification.id)">
+                    <div class="avatar">{{senderInitials(notification)}}</div>
+
+                    <div class="notification-content">
+                        <div class="heading"><span class="title">Bharani Mentioned</span><span class="time-line">5 days ago</span></div>
+                        <p class="message">{{ notification.message }}</p>
+                        <button mat-button color="primary" (click)="markAsRead(notification.id)">
                         Mark as Read
-                    </button>
+                        </button>
+                    </div>
                 </div>
             </mat-list-item>
         </mat-list>
@@ -15,3 +20,24 @@
         <p>No new notifications</p>
     </div>
 </div>
+
+<!-- <div mat-menu-item class="notification-pane">
+
+    <div *ngIf="notifications().length > 0" class="notification-list">
+        <div class="notification-row" *ngFor="let notification of notifications()">
+            <div class="notification-item">
+                <div class="avatar">{{senderInitials(notification)}}</div>
+                <div class="notification-content">
+                    <p class="message">{{ notification.message }}</p>
+                    <button mat-button color="primary" (click)="markAsRead(notification.id)">
+                        Mark as Read
+                        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="notifications().length === 0" class="empty-state">
+        <p>No new notifications</p>
+    </div>
+</div> -->

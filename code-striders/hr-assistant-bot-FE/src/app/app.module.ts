@@ -22,6 +22,7 @@ import { ChatbotDialogComponent } from './components/chatbot/chatbot-dialog/chat
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotificationBellComponent } from './components/notification/notification-bell.component';
 import { NotificationPaneComponent } from './components/notification/notification-pane/notification-pane.component';
+import { NotificationItemComponent } from './components/notification/notification-item/notification-item.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { NotificationPaneComponent } from './components/notification/notificatio
     ChatbotDialogComponent,
     DashboardComponent,
     NotificationBellComponent,
-    NotificationPaneComponent
+    NotificationPaneComponent,
+    NotificationItemComponent
     ],
   imports: [
     BrowserModule,

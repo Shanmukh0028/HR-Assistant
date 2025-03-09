@@ -1,70 +1,143 @@
-.notification-pane {
-    // width: 400px;
-    /* Adjust the width for a better appearance */
-    max-height: 400px;
-    /* Add scrolling for large lists */
-    overflow-y: auto;
-    background-color: #f9f9f9;
-    // border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    .notification-list {
-        margin: 0;
-        padding: 0;
-        mat-list {
-            padding: 0;
-            .notification-row {
-                padding: 0;
-                margin: 2px 0px;
+        // .notification-pane {
+        //     // max-height: 500px;
+        //     /* Add scrolling for large lists */
+        //     // overflow-y: auto;
+        //     // background-color: #f9f9f9;
+        //     // border: 1px solid #ddd;
+        //     border-radius: 8px;
+        //     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        //     margin: 0px auto;
+        //     // padding: 10px;
+        //     .notification-list {
+        //         margin: 0;
+        //         padding: 0;
+        //         display: flex;
+        //         flex-direction: column;
+        //         // mat-list {
+        //         padding: 0;
+        //         .notification-row {
+        //             padding: 0 10px;
+        //             margin: 2px 0px;
+        //             box-sizing: border-box;
+        //             list-style: none;
+        //         }
+        //         .notification-item {
+        //             display: flex;
+        //             flex-direction: row;
+        //             justify-content: space-between;
+        //             align-items: center;
+        //             background-color: #ffffff;
+        //             border: 1px solid red;
+        //             border-radius: 5px;
+        //             padding: 10px;
+        //             // margin-bottom: 10px;
+        //             box-sizing: border-box;
+        //             transition: background-color 0.3s ease;
+        //             &:hover {
+        //                 background-color: #f1f1f1;
+        //             }
+        //             .notification-content {
+        //                 display: flex;
+        //                 flex-direction: row;
+        //                 .message {
+        //                     font-size: 14px;
+        //                     color: #333;
+        //                     margin-bottom: 5px;
+        //                 }
+        //                 button {
+        //                     align-self: flex-end;
+        //                 }
+        //             }
+        //         }
+        //         // }
+        //     }
+        //     .empty-state {
+        //         text-align: center;
+        //         color: #363333;
+        //         font-style: italic;
+        //         padding: 20px;
+        //         /* Add padding for better appearance */
+        //     }
+        // }
+        // /* Adjust the width of the mat-menu */
+        //  ::ng-deep .mat-mdc-menu-panel {
+        //     max-width: 500px;
+        //     width: 400px !important;
+        //     overflow-x: hidden;
+        //     /* Hide horizontal scrollbar */
+        // }
+        //  ::ng-deep .mat-mdc-menu-content {
+        //     padding: 0px !important
+        // }
+        //  ::ng-deep mat-list-item {
+        //     background-color: #ffffff;
+        // }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            /* Works well for inline elements */
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+            background-color: blue;
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+        
+        .notification-list {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .notification-row {
+            height: auto !important; // this helps to take as much space as children take
+            padding: 0px;
+        }
+        
+        .notification-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .notification-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            font-size: 14px;
+            p {
+                margin-block-end: 0px;
             }
-            .notification-item {
+            button {
+                align-self: flex-end
+            }
+            .heading {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color: #ffffff;
-                border: 1px solid #e0e0e0;
-                border-radius: 5px;
-                padding: 10px;
-                // margin-bottom: 10px;
-                transition: background-color 0.3s ease;
-                &:hover {
-                    background-color: #f1f1f1;
+                gap: 5px;
+                .title {
+                    font-weight: 500;
                 }
-                .notification-content {
-                    display: flex;
-                    flex-direction: column;
-                    .message {
-                        font-size: 14px;
-                        color: #333;
-                        margin-bottom: 5px;
-                    }
-                    button {
-                        align-self: flex-end;
-                    }
+                .time-line {
+                    font-weight: 400;
+                    color: #7A869A;
                 }
+            }
+            .message {
+                font-weight: 400;
             }
         }
-    }
-    .empty-state {
-        text-align: center;
-        color: #363333;
-        font-style: italic;
-        padding: 20px;
-        /* Add padding for better appearance */
-    }
-}
-
-
-/* Adjust the width of the mat-menu */
-
-::ng-deep .mat-mdc-menu-panel {
-    max-width: 500px;
-    width: 400px !important;
-    overflow-x: hidden;
-    /* Hide horizontal scrollbar */
-}
-
-::ng-deep .mat-mdc-menu-content {
-    padding: 0px !important
-}
+        
+         :host ::ng-deep .mat-mdc-menu-item-text {
+            width: 100%;
+        }
+        
+        // .notification-pane {
+        //     max-width: 500px !important;
+        //     width: 400px !important;
+        // }

@@ -1,25 +1,28 @@
-<mat-sidenav-container class="sidenav-container" [hasBackdrop]="true" (backdropClick)="sidenav.close()">
-    <mat-sidenav #sidenav mode="side" class="sidenav" [opened]="false">
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="sidenav" [opened]="false">
         <mat-nav-list>
-            <mat-list-item (click)="navigateTo('home')">Home</mat-list-item>
+            <mat-list-item (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </mat-list-item>
+            <mat-list-item>Queries</mat-list-item>
+            <mat-list-item (click)="navigateTo('dashboard',userType)">Home</mat-list-item>
             <mat-list-item (click)="navigateTo('profile')">Profile</mat-list-item>
             <mat-list-item (click)="navigateTo('settings')">Settings</mat-list-item>
             <mat-list-item (click)="navigateTo('help')">Help</mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content role="main">
         <mat-toolbar color="primary">
-            <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
+            <button *ngIf="!sidenav.opened" mat-icon-button (click)=" sidenav.toggle() ">
+                <mat-icon>menu</mat-icon>
+            </button>
             <span>Chatbot</span>
             <span class="spacer"></span>
             <app-notification-bell></app-notification-bell>
-            <button mat-button (click)="logout()">Logout</button>
+            <button mat-button (click)="logout() ">Logout</button>
         </mat-toolbar>
 
-        <!-- Your existing content goes here -->
         <app-chatbot-dialog></app-chatbot-dialog>
     </mat-sidenav-content>
 </mat-sidenav-container>
